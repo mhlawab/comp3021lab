@@ -1,9 +1,10 @@
 package base;
 
 import java.util.Objects;
+import java.util.Date;
 
-public class Note {
-	java.util.Date date;
+public class Note implements Comparable<Note>{
+	Date date;
 	private String title;
 
 	@Override
@@ -14,10 +15,23 @@ public class Note {
 
 	public Note(String title) {
 		this.title=title;
-		date = new java.util.Date();
+		date = new Date();
 	}
 	
 	public String getTitle() {
 		return title;
+	}
+	
+	@Override
+	public int compareTo(Note o) {
+		if (this.date.before(o.date)) {
+			return 1;
+		} else if (this.date.after(o.date)) {
+			return -1;
+		} else return 0;
+	}
+	
+	public String toString() {
+		return date.toString() + "\t" + title;
 	}
 }
