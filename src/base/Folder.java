@@ -1,12 +1,14 @@
 package base;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
-public class Folder implements Comparable<Folder> {
+public class Folder implements Comparable<Folder>, Serializable {
 	
 	final String garble = "!@!@!@!@@!@!@@@@@!!!@";
+	private static final long serialVersionUID = 1L;
 
 	private ArrayList<Note> notes;
 	private String name;
