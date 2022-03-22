@@ -10,8 +10,8 @@ public class TextNote extends Note implements Serializable {
 	public String content;
 	private static final long serialVersionUID = 1L;
 	
-	public TextNote(String content) {
-		super(content);
+	public TextNote(String title) {
+		super(title);
 	}
 	
 	public TextNote(String title, String content) {
